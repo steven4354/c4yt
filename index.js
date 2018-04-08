@@ -33,8 +33,11 @@ app.get('/', function (request, response) {
   response.send('Hello Viking!')
 })
 
-let test = require('./routers/test')
-app.use('/test', test)
+// let test = require('./routers/test')
+// app.use('/test', test)
+
+let pots = require('./routers/pots')
+app.use('/pots', pots)
 
 app.listen(port, function () {
   // This function is run when the app starts up.
