@@ -24,15 +24,24 @@ router.get("/join/:potId/:name/:value", async (req, res, next) => {
     let rawdata = await fs.readFileSync("./database/pots.json");
     let pots = await JSON.parse(rawdata);
 
+    let rawdata = await fs.readFileSync("./database/users.json");
+    let users = await JSON.parse(rawdata);
+
     //add the person to small fishes
     pots[potId].smallFishes.push({
       name: name,
       value: value
     });
 
+    //deduct their account
+    users[name] -= value;
+
     //write to file the new pots
     let potsStr = await JSON.stringify(pots);
     await fs.writeFileSync("./database/pots.json", potsStr);
+
+    let usersStr = await JSON.stringify(users);
+    await fs.writeFileSync("./database/users.json", usersStr);
 
     res.redirect("/pots");
   } catch (err) {
