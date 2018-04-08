@@ -15,6 +15,38 @@ router.get("/", async (req, res, next) => {
   }
 });
 
+router.get("/:potId", async (req, res, next) => {
+  try {
+    let potId = parseInt(req.params.potId);
+
+    let rawdata = await fs.readFileSync("./database/pots.json");
+    let pots = await JSON.parse(rawdata);
+
+    res.json(pots[potId]);
+  } catch (err) {
+    console.log(err);
+  }
+});
+
+router.get("/join", async (req, res, next) => {
+  try {
+    await exec('/Users/liamkhong/Documents/cryptoHackathon/bcoin/node_modules/.bin/bwallet-cli send --id=coinbase --value=100 --address=SNNX6LjhSDqDbqi9xn3szsgkcDD8mk4u5Bt', (err, stdout, stderr) => {
+        if (err) {
+          // node couldn't execute the command
+          console.log("err =>", err)
+          return;
+        }
+
+        // the *entire* stdout and stderr (buffered)
+        console.log(`stdout: ${stdout}`);
+        console.log(`stderr: ${stderr}`);
+        res.json(stdout)
+    });
+  } catch (err) {
+    console.log(err);
+  }
+});
+
 router.get("/join/:potId/:name/:value", async (req, res, next) => {
   try {
     let potId = parseInt(req.params.potId);
