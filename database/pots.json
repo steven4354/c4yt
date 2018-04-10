@@ -1,6 +1,6 @@
 [
   {
-    "amount": 201700.52,
+    "amount": 201700,
     "bigFish": { "name": "Farn Yu", "amount": 200000 },
     "smallFishes": [
       { "name": "Dima", "amount": 200 },
@@ -9,7 +9,7 @@
     ]
   },
   {
-    "amount": 50080.75,
+    "amount": 50080,
     "bigFish": { "name": "Farn Yu", "amount": 200000 },
     "smallFishes": [
       { "name": "Ryan", "amount": 1000 },
@@ -20,7 +20,7 @@
     ]
   },
   {
-    "amount": 29100.89,
+    "amount": 29100,
     "bitcoins": 3,
     "bigFish": { "name": "Farn Yu", "amount": 200000 },
     "smallFishes": [
@@ -31,7 +31,7 @@
     ]
   },
   {
-    "amount": 910.9,
+    "amount": 910,
     "bigFish": { "name": "Farn Yu", "amount": 200000 },
     "smallFishes": [
       { "name": "Ryan", "amount": 1000 },
@@ -41,7 +41,7 @@
     ]
   },
   {
-    "amount": 100.8484,
+    "amount": 100,
     "bigFish": { "name": "Farn Yu", "amount": 2000000 },
     "smallFishes": [
       { "name": "Ryan", "amount": 1000 },
